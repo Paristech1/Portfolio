@@ -1,0 +1,19 @@
+{
+  "name": "neontech-landing",
+  "version": "1.0.0",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": ["landing-page", "tech-startup", "three.js", "3d-globe"],
+  "author": "",
+  "license": "ISC",
+  "description": "A modern tech startup landing page with 3D elements and animations",
+  "dependencies": {
+    "aos": "^2.3.4",
+    "express": "^4.21.2",
+    "particles.js": "^2.0.0",
+    "three": "^0.174.0"
+  }
+}
