@@ -15,6 +15,15 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Mobile Navigation
     initMobileNav();
+
+    // Get the "Explore My Solutions" button and add click event
+    const exploreButton = document.querySelector('.about-text .cta-button');
+    if (exploreButton) {
+        exploreButton.addEventListener('click', () => {
+            // Scroll to contact section since solutions was removed
+            document.getElementById('contact').scrollIntoView({ behavior: 'smooth' });
+        });
+    }
 });
 
 // 3D Globe with Three.js
@@ -236,16 +245,17 @@ document.addEventListener('mousemove', e => {
     });
 });
 
-// Reset tilt when mouse leaves card
+// Reset the 3D tilt when mouse leaves card
 document.querySelectorAll('.feature-card').forEach(card => {
     card.addEventListener('mouseleave', () => {
-        card.style.transform = 'perspective(1000px) rotateX(0) rotateY(0)';
+        // Remove the transform effect but keep the oscillating border
+        card.style.transform = '';
         setTimeout(() => {
             card.style.transition = '';
         }, 300);
     });
     
     card.addEventListener('mouseenter', () => {
-        card.style.transition = 'transform 0.1s ease';
+        card.style.transition = 'transform 0.2s ease';
     });
 }); 
